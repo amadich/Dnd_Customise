@@ -11,6 +11,14 @@ export default function Home() {
   const [characters , UpdateCharacters] = useState(Characters);
   const [fav , UpdateFav] = useState(Fav);
 
+  useEffect(() => {
+    const filteredCharacters = characters.filter(character => 
+      !fav.some(fav => fav.id === character.id));
+  
+      UpdateCharacters(filteredCharacters);
+  
+  },[]);
+
   const handleOnDragEnd = (result: any) => {
     if(!result.destination) return;
 
@@ -35,6 +43,8 @@ export default function Home() {
 
   useEffect(() => {
     console.log(fav);
+    console.log(characters);
+    
   }, [characters, fav]);
 
   return (
@@ -45,8 +55,8 @@ export default function Home() {
         <DragDropContext onDragEnd={handleOnDragEnd} >
           
                   <div className="flex space-x-4 " >
-                    <Colum characters={characters} listTitle="All Characters" droppableId="column1" />
-                    <Colum characters={fav} listTitle="Favorite List" droppableId="column2" />
+                    <Colum characters={characters}  listTitle="All Characters" droppableId="column1" />
+                    <Colum characters={fav}  listTitle="Favorite List" droppableId="column2" />
                   </div>
                
         </DragDropContext>

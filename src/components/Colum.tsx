@@ -5,11 +5,15 @@ interface ColumProps {
     characters: { id: number; name: string; image: string; }[]; // Update the characters prop to accept an array of objects
     droppableId: string;
     listTitle?: string;
+    
 }
 
 export default class Colum extends React.Component<ColumProps> {
    render(): React.ReactNode {
-      const { characters , droppableId , listTitle } = this.props;
+      const { characters , droppableId , listTitle  } = this.props;
+      
+      
+
       return (
          <Droppable droppableId={droppableId}>
             {(provided, snapshot) => (

@@ -36,6 +36,11 @@
       "image": "/characters/gunter.png"
    },
    {
+      "id": 90,
+      "name": "Human Banana",
+      "image": "/characters/Banana.png"
+   },
+   {
       "id": 80,
       "name": "cupcake",
       "image": "/characters/cup.png"
