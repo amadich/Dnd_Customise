@@ -1,0 +1,43 @@
+[
+   {
+      "id": 1,
+      "name": "Finn",
+      "image": "/characters/fin.png"
+   },
+   {
+      "id": 2,
+      "name": "Jake",
+      "image": "/characters/jake.png"
+   },
+   {
+      "id": 3,
+      "name": "BMO",
+      "image": "/characters/bmo.png"
+   },
+   {
+      "id": 4,
+      "name": "Space Princess",
+      "image": "/characters/pr_space.png"
+   },
+   
+   {
+      "id": 50,
+      "name": "Princess Bubblegum",
+      "image": "/characters/pr_gum.png"
+   },
+   {
+      "id": 60,
+      "name": "Marceline",
+      "image": "/characters/marceline.png"
+   },
+   {
+      "id": 70,
+      "name": "Gunter with Kitten",
+      "image": "/characters/gunter.png"
+   },
+   {
+      "id": 80,
+      "name": "cupcake",
+      "image": "/characters/cup.png"
+   }
+]
