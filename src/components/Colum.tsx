@@ -3,15 +3,18 @@ import { Droppable , Draggable } from "@hello-pangea/dnd";
 
 interface ColumProps {
     characters: { id: number; name: string; image: string; }[]; // Update the characters prop to accept an array of objects
+    droppableId: string;
+    listTitle?: string;
 }
 
 export default class Colum extends React.Component<ColumProps> {
    render(): React.ReactNode {
-      const { characters } = this.props;
+      const { characters , droppableId , listTitle } = this.props;
       return (
-         <Droppable droppableId="characters">
+         <Droppable droppableId={droppableId}>
             {(provided, snapshot) => (
-               <ul className="table m-auto" {...provided.droppableProps} ref={provided.innerRef}>
+               <ul className="table m-auto border bg-green-300 " {...provided.droppableProps} ref={provided.innerRef}>
+                  <li className="text-xl font-bold" > { listTitle } </li>
                   {characters.map((character, index) => (
                      <Draggable key={character.id} draggableId={character.id.toString()} index={index}>
                         {(provided, snapshot) => (
