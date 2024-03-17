@@ -1,36 +1,32 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Customise the Appearance of an App during a Drag using react-beautiful-dnd snapshot Values
 
-## Getting Started
+![image](https://github.com/amadich/Dnd_Customise/assets/74735976/13714f7a-adc7-40af-bd04-9ef1db29e6ec)
 
-First, run the development server:
-
+# react-beautiful-dnd -> hello-pangea/dnd (NextJS 14)
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+$npm i @hello-pangea/dnd
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# snapshot Customise
+```tsx
+<Draggable key={character.id} draggableId={character.id.toString()} index={index}>
+                        {(provided, snapshot) => (
+                           <li 
+                              {...provided.draggableProps}
+                              {...provided.dragHandleProps}
+                              ref={provided.innerRef}
+                              className={`flex items-center space-x-4 select-none border-b border-b-[#333] p-2  ${snapshot.isDragging ? 'bg-green-500' : 'bg-blue-400'}`}  >
+                              <img src={character.image} alt={character.name} width={30} draggable={false} />
+                              <div className="flex space-x-4 items-center justify-between">
+                                 <p key={character.id}>{character.name}</p>
+                                 <span className=" text-slate-100 text-sm font-bold" > id/@{character.id} </span>
+                              </div>
+                           </li>
+                        )}
+</Draggable>
+```
+```ts
+snapshot.isDragging ? 'bg-green-500' : 'bg-blue-400'
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Thanks , Dont Forget to Add Star ⭐
